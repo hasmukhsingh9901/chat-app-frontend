@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Country } from '@/types';
+import { Country } from '@/types/auth';
 
 export const useCountries = () => {
   const [countries, setCountries] = useState<Country[]>([]);
@@ -14,8 +14,8 @@ export const useCountries = () => {
         const data = await response.json();
         
         const formattedCountries: Country[] = data
-          .filter((country: any) => country.idd?.root && country.idd?.suffixes?.[0])
-          .map((country: any) => ({
+          .filter((country: { idd?: { root?: string; suffixes?: string[] } }) => country.idd?.root && country.idd?.suffixes?.[0])
+          .map((country: { name: { common: string }; cca2: string; idd: { root: string; suffixes: string[] } }) => ({
             name: country.name.common,
             code: country.cca2,
             dial_code: `${country.idd.root}${country.idd.suffixes[0]}`,

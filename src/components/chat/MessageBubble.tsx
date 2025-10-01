@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import { Copy, Check, Bot, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Message } from '@/types';
+import { Message } from '@/types/chat';
 import { cn } from '@/lib/utils';
 
 interface MessageBubbleProps {

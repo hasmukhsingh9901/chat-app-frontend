@@ -1,6 +1,5 @@
 import { useChatStore } from '@/store/chatStore';
 import { toast } from 'sonner';
-import { Chatroom } from '@/types';
 
 export const useChat = () => {
   const {
@@ -48,7 +47,7 @@ export const useChat = () => {
 
       // Generate AI response if there's text content
       if (content.trim()) {
-        generateAIResponse(chatroomId, content);
+        generateAIResponse(chatroomId);
       }
     } catch (error) {
       toast.error('Failed to send message. Please try again.');

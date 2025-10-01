@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { useChatStore } from '@/store/chatStore';
 import { toast } from 'sonner';
-import { Chatroom } from '@/types';
+import { Chatroom } from '@/types/chat';
 
 interface DeleteChatroomDialogProps {
   open: boolean;
@@ -38,7 +38,7 @@ export function DeleteChatroomDialog({ open, onOpenChange, chatroom }: DeleteCha
         <AlertDialogHeader>
           <AlertDialogTitle>Delete Chatroom</AlertDialogTitle>
           <AlertDialogDescription>
-            Are you sure you want to delete "{chatroom?.title}"? This action cannot be undone.
+            Are you sure you want to delete &quot;{chatroom?.title}&quot;? This action cannot be undone.
             All messages in this chatroom will be permanently deleted.
           </AlertDialogDescription>
         </AlertDialogHeader>

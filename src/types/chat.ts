@@ -28,5 +28,5 @@ export interface ChatStore extends ChatState {
   addMessage: (chatroomId: string, message: Omit<Message, 'id' | 'timestamp'>) => void;
   loadOlderMessages: (chatroomId: string) => void;
   setTyping: (typing: boolean) => void;
-  generateAIResponse: (chatroomId: string, userMessage: string) => void;
+  generateAIResponse: (chatroomId: string) => void;
 }

@@ -3,7 +3,7 @@ import { persist } from 'zustand/middleware';
 import { Chatroom, Message, ChatStore } from '@/types/chat';
 
 // Generate dummy AI responses
-const generateAIResponse = (userMessage: string): string => {
+const generateAIResponse = (): string => {
   const responses = [
     "That's an interesting question! Let me think about that...",
     "I understand what you're asking. Here's my perspective on that topic.",
@@ -103,7 +103,7 @@ export const useChatStore = create<ChatStore>()(
         set({ isTyping: typing });
       },
 
-      generateAIResponse: async (chatroomId: string, userMessage: string) => {
+      generateAIResponse: async (chatroomId: string) => {
         const { setTyping, addMessage } = get();
         
         setTyping(true);
@@ -113,7 +113,7 @@ export const useChatStore = create<ChatStore>()(
         
         setTyping(false);
         
-        const aiResponse = generateAIResponse(userMessage);
+        const aiResponse = generateAIResponse();
         addMessage(chatroomId, {
           content: aiResponse,
           type: 'ai',

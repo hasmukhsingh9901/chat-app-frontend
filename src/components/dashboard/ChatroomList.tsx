@@ -11,7 +11,7 @@ import { useChatStore } from '@/store/chatStore';
 import { useAuthStore } from '@/store/authStore';
 import { CreateChatroomDialog } from './CreateChatroomDialog';
 import { DeleteChatroomDialog } from './DeleteChatroomDialog';
-import { Chatroom } from '@/types';
+import { Chatroom } from '@/types/chat';
 
 interface ChatroomListProps {
   onChatroomSelect?: () => void;
